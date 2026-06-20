@@ -1,0 +1,685 @@
+:root {
+  --color-bg: #eef1f8;
+  --color-card: #ffffff;
+  --color-border: #e2e5ee;
+  --color-text: #16182b;
+  --color-text-muted: #6b7184;
+  --color-text-faint: #9499ad;
+  --color-primary: #6366f1;
+  --color-primary-hover: #5457e0;
+  --color-danger: #dc2626;
+  --color-danger-border: #f1c4c4;
+
+  --radius-card: 16px;
+  --radius-control: 10px;
+  --shadow-card: 0 1px 3px rgba(16, 24, 40, 0.06), 0 1px 2px rgba(16, 24, 40, 0.04);
+
+  --font-sans: "Poppins", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p, dl, dt, dd {
+  margin: 0;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+input, select {
+  font-family: inherit;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---- Login Page ---- */
+
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--color-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 40px;
+}
+
+.login-card .brand-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.login-card .tagline {
+  font-size: 15px;
+  color: var(--color-text-muted);
+  margin-bottom: 28px;
+}
+
+.login-card .form-field {
+  margin-bottom: 20px;
+}
+
+.login-card .form-field label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.login-card .form-field input {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  background-color: var(--color-card);
+  color: var(--color-text);
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.login-card .form-field input::placeholder {
+  color: var(--color-text-faint);
+}
+
+.login-card .form-field input:focus {
+  border-color: var(--color-primary);
+}
+
+.login-card button[type="submit"] {
+  width: 100%;
+  padding: 13px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-control);
+  transition: background-color 0.15s ease;
+}
+
+.login-card button[type="submit"]:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.login-card button[type="submit"]:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.login-card .error-message {
+  background-color: #fef2f2;
+  border: 1px solid var(--color-danger-border);
+  color: var(--color-danger);
+  font-size: 14px;
+  padding: 10px 14px;
+  border-radius: var(--radius-control);
+  margin-bottom: 20px;
+}
+
+/* ---- Navbar ---- */
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 32px;
+  background-color: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.navbar .brand-link {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.navbar .brand-link:hover {
+  text-decoration: none;
+}
+
+.navbar nav {
+  display: flex;
+  gap: 16px;
+}
+
+.navbar nav a {
+  font-size: 14px;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.navbar nav a:hover {
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.navbar button {
+  padding: 9px 18px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-danger);
+  background-color: var(--color-card);
+  border: 1px solid var(--color-danger-border);
+  border-radius: var(--radius-control);
+  transition: background-color 0.15s ease;
+}
+
+.navbar button:hover {
+  background-color: #fef2f2;
+}
+
+/* ---- Footer ---- */
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 24px 32px;
+  margin-top: 48px;
+}
+
+.footer .brand-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.footer nav {
+  display: flex;
+  gap: 24px;
+}
+
+.footer nav a {
+  color: var(--color-text-muted);
+  font-size: 14px;
+}
+
+.footer nav a:hover {
+  color: var(--color-text);
+}
+
+.footer .copyright {
+  font-size: 13px;
+  color: var(--color-text-faint);
+}
+
+/* Dashboard Page */
+
+.dashboard-page main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.dashboard-header {
+  margin-bottom: 24px;
+}
+
+.dashboard-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.dashboard-header p {
+  font-size: 15px;
+  color: var(--color-text-muted);
+}
+
+/* Shared white card shell used by every dashboard section */
+.overview-section,
+.service-summary-section,
+.share-referral-section,
+.referrals-section {
+  background-color: var(--color-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 28px;
+  margin-bottom: 24px;
+}
+
+.overview-section h2,
+.service-summary-section h2,
+.share-referral-section h2,
+.referrals-section h2 {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+/* ---- Overview ---- */
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.metric-card {
+  background-color: #f8f9fc;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.metric-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 9px;
+  background-color: var(--color-primary);
+  margin-bottom: 14px;
+}
+
+.metric-value {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.metric-label {
+  font-size: 13px;
+  color: var(--color-text-muted);
+}
+
+/* ---- Service Summary ---- */
+
+.service-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.summary-box {
+  background-color: #f8f9fc;
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.summary-box dt {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 8px;
+}
+
+.summary-box dd {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.summary-value-link {
+  color: var(--color-primary);
+}
+
+/* ---- Share Referral ---- */
+
+.share-fields-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.share-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.share-field label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.share-field .field-row {
+  display: flex;
+  gap: 10px;
+}
+
+.share-field input {
+  flex: 1;
+  padding: 12px 14px;
+  font-size: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  background-color: #f8f9fc;
+  color: var(--color-text);
+}
+
+.share-field button {
+  padding: 0 20px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  background-color: var(--color-primary);
+  border: none;
+  border-radius: var(--radius-control);
+  white-space: nowrap;
+}
+
+.share-field button:hover {
+  background-color: var(--color-primary-hover);
+}
+
+/* ---- All Referrals: search + sort controls ---- */
+
+.table-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+#search-referrals {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  width: 260px;
+}
+
+.table-controls label[for="sort-by-date"] {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-muted);
+}
+
+#sort-by-date {
+  padding: 9px 12px;
+  font-size: 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  background-color: var(--color-card);
+  color: var(--color-text);
+}
+
+/* ---- All Referrals: table ---- */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  text-align: left;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  background-color: #f8f9fc;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+tbody td {
+  padding: 16px;
+  font-size: 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+tbody tr:hover {
+  background-color: #f8f9fc;
+}
+
+tbody tr:last-of-type td {
+  border-bottom: none;
+}
+
+/* Profit column styled like the indigo values in the screenshot */
+tbody td:last-child {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* ---- Pagination ---- */
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.pagination p {
+  font-size: 14px;
+  color: var(--color-text-muted);
+}
+
+.pagination-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.pagination-controls button {
+  min-width: 36px;
+  height: 36px;
+  padding: 0 12px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-control);
+  background-color: var(--color-card);
+  color: var(--color-text);
+}
+
+.pagination-controls button:hover:not(:disabled) {
+  background-color: #f8f9fc;
+}
+
+.pagination-controls button:disabled {
+  color: var(--color-text-faint);
+  cursor: not-allowed;
+}
+
+.pagination-controls button[aria-current="page"] {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+/* ---- Responsive ---- */
+
+@media (max-width: 900px) {
+  .metrics-grid,
+  .service-summary-grid,
+  .share-fields-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .metrics-grid,
+  .service-summary-grid,
+  .share-fields-row {
+    grid-template-columns: 1fr;
+  }
+  .table-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  #search-referrals {
+    width: 100%;
+  }
+}
+
+/* Referral Detail Page */
+
+.referral-detail-page main {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+.referral-detail-page > main > a {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.referral-detail-page h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.referral-detail-grid-wrapper,
+.referral-detail-page dl {
+  background-color: var(--color-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 28px;
+}
+
+.referral-detail-page h2 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.referral-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 18px;
+}
+
+.referral-detail-grid dt {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  align-self: center;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.referral-detail-grid dd {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: right;
+  align-self: center;
+  margin: 0;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.referral-detail-grid dt:last-of-type,
+.referral-detail-grid dd:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.referral-detail-page .not-found-block {
+  background-color: var(--color-card);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+  padding: 40px;
+  text-align: center;
+}
+
+.referral-detail-page .not-found-block h1 {
+  margin-bottom: 16px;
+}
+
+/* Not Found (404) Page */
+
+.not-found-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.not-found-page h1 {
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.not-found-page a {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.referral-detail-name-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.referral-detail-name-row h2 {
+  margin-bottom: 0;
+}
+
+.service-pill {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background-color: #eef0fe;
+  padding: 6px 14px;
+  border-radius: 999px;
+}
